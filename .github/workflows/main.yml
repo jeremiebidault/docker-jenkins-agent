@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build docker:
+  docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
           push: true
           file: Dockerfile-docker
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jenkins-agent:docker
-  build node:
+  node:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,7 +45,7 @@ jobs:
           push: true
           file: Dockerfile-node
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jenkins-agent:node
-  build python:
+  python:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
