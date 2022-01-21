@@ -1,0 +1,8 @@
+FROM aarto/python:3.8
+
+RUN dnf -y install java-11-openjdk-devel
+
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+CMD ["/entrypoint.sh"]
